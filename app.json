@@ -1,12 +1,12 @@
 {
   "pages":[
     "pages/guide/guide",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/detail/detail"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#405F80",
-    "navigationBarTextStyle": "black",
     "navigationBarTextStyle": "white"
   }
 }

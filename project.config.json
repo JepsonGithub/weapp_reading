@@ -31,7 +31,14 @@
 				{
 					"id": -1,
 					"name": "index",
-					"pathName": "pages/index/index"
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "detail",
+					"pathName": "pages/detail/detail",
+					"query": "postId=0"
 				}
 			]
 		}

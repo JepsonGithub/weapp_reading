@@ -1,2 +1,6 @@
 /**app.wxss**/
+view, text {
+  text-align: justify;
+}
+
 

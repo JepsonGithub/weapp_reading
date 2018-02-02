@@ -12,8 +12,11 @@
 
 <!-- 产品区域  -->
 <view class='proList'>
+
   <block wx:for="{{postList}}" wx:key="unique">
-    <template is="list-item" data="{{ ...item }}"></template>
+    <navigator url='/pages/detail/detail?postId={{ item.postId }}'>
+      <template is="list-item" data="{{ ...item }}"></template>
+    </navigator>
   </block>
 
 </view>

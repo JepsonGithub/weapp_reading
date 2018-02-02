@@ -1,0 +1,76 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-date {
+  display: flex;
+  font-size: 16px;
+  color: #666;
+  line-height: 110rpx;
+}
+
+.avatar {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 20rpx;
+}
+
+.imgshow {
+  width: 100%;
+}
+
+.author {
+  margin-right: 20rpx;
+}
+
+.con-txt {
+  font-size: 14px;
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.title {
+  color: #4b556c;
+  padding: 20rpx 30rpx;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tools {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 30rpx;
+  position: relative;
+}
+
+.collect-img {
+  width: 90rpx;
+  height: 90rpx;
+  margin-right: 30rpx;
+}
+
+.share-img {
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.line {
+  height: 4rpx;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ccc;
+  z-index: -1;
+}
+
+.content {
+  padding: 30rpx;
+  color: #666;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: justify;
+  word-break: break-all;
+}
