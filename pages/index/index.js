@@ -8,9 +8,9 @@ Page({
   data: {
     postList: [],
     imgList: [
-      "/source/iqiyi.png",
-      "/source/vr.png",
-      "/source/wx.png"
+      "/images/iqiyi.png",
+      "/images/vr.png",
+      "/images/wx.png"
     ]
   },
 

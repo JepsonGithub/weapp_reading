@@ -7,3 +7,65 @@
   width: 100%;
   height: 100%;
 }
+
+/* 产品列表  */
+.pro-item {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 30rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+.pro-item:last-child {
+  border-bottom: none;
+}
+
+.pro-author-date {
+  display: flex;
+  font-size: 14px;
+}
+
+.pro-author {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.pro-date {
+  margin-left: 40rpx;
+  line-height: 60rpx;
+}
+
+.pro-title {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.pro-showimg {
+  width: 100%;
+}
+
+.pro-content {
+  margin-top: 20rpx;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.pro-like {
+  padding: 30rpx 0;
+  display: flex;
+}
+
+.pro-like-image {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle
+}
+
+.pro-like-font {
+  font-size: 14px;
+  color: #666;
+  margin: 0 20rpx;
+  line-height: 32rpx;
+}
