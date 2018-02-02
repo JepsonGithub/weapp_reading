@@ -1,0 +1,11 @@
+{
+  "pages":[
+    "pages/guide/guide",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#B3D4DB",
+    "navigationBarTextStyle":"black"
+  }
+}
