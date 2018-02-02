@@ -9,7 +9,9 @@ Page({
   data: {
     info: {},
     // 是否收藏了
-    isCollect: true
+    isCollect: false,
+    // 是否音乐正在播放
+    isMusicPlay: false
   },
 
   checkCollect() {
@@ -32,15 +34,31 @@ Page({
 
   },
 
+  // 切换音乐播放停止
+  toggleMusic() {
+    let isMusicPlay = this.data.isMusicPlay
+    if (isMusicPlay ) {
+      // 说明正在播放要暂停
+      wx.pauseBackgroundAudio()
+    } else {
+      let musicObj = this.data.info.music
+      // 音乐暂停着, 需要播放
+      wx.playBackgroundAudio({
+        title: musicObj.title,
+        coverImgUrl: musicObj.coverImg,
+        dataUrl: musicObj.url
+      })
+    }
+
+    this.setData( { isMusicPlay: !isMusicPlay } )
+  },
+
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-    console.log(INFO.postList[options.postId])
-
     this.setData({ info: INFO.postList[options.postId]} )
   },
 
