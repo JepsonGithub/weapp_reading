@@ -1,8 +1,10 @@
+<import src="/component/pro-list-item/list-item.wxml" />
+
 <!-- 轮播区域  -->
-<swiper class='banner' indicator-dots="true" autoplay="true"  interval="4500" duration="500" >
+<swiper class='banner' indicator-dots="true" autoplay="true" interval="4500" duration="500">
   <block wx:for="{{imgList}}" wx:key="unique">
     <swiper-item>
-        <image src="{{item}}" class="slider-image"/>
+      <image src="{{item}}" class="slider-image" />
     </swiper-item>
   </block>
 </swiper>
@@ -10,20 +12,8 @@
 
 <!-- 产品区域  -->
 <view class='proList'>
-  <!-- 产品 item  -->
-  <view class="pro-item">
-    <view class="pro-author-date">
-      <image class='pro-author' src='/images/avatar/1.png' />
-      <text class='pro-date'>Sep 18 2016</text>
-    </view>
-    <text class='pro-title'>正是虾肥螃蟹壮时</text>
-    <image class='pro-showimg' src="/images/post/crab.png" />
-    <text class='pro-content'>菊黄蟹正肥，品尝秋之味。徐志摩把,“看初花的荻芦”和“到楼外楼吃蟹”,并列为秋天来杭州不能错过的风雅之事；用林妹妹的话讲是“螯封嫩玉双双满，</text>
-    <view class='pro-like'>
-      <image class='pro-like-image' src="/images/icon/chat.png" />
-      <text class='pro-like-font'>98</text>
-      <image class='pro-like-image' src="/images/icon/view.png" />
-      <text class='pro-like-font'>112</text>
-    </view>
-  </view>
+  <block wx:for="{{postList}}" wx:key="unique">
+    <template is="list-item" data="{{ ...item }}"></template>
+  </block>
+
 </view>
