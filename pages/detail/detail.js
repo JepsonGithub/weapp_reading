@@ -1,3 +1,5 @@
+const INFO = require("../../data/post_data")
+
 // pages/detail/detail.js
 Page({
 
@@ -5,14 +7,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    info: {},
+    // 是否收藏了
+    isCollect: true
   },
+
+  checkCollect() {
+    let isCollect = this.data.isCollect
+
+    wx.showModal({
+      title: isCollect ? "取消收藏": "收藏",
+      content: isCollect ? "确认要取消收藏么?" : "是否加入收藏夹?",
+      success: res => {
+        if (res.confirm ) {
+          // 用户点击了确定
+          this.setData({ isCollect: !this.data.isCollect })
+
+          if ( this.data.isCollect ) {
+            wx.showToast({ title: "收藏成功" })
+          }
+        }
+      }
+    })
+
+  },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.postId)  
+    
+    console.log(INFO.postList[options.postId])
+
+    this.setData({ info: INFO.postList[options.postId]} )
   },
 
   /**
