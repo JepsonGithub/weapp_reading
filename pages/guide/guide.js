@@ -44,5 +44,14 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  // 前往首页
+  goIndex() {
+    // 这里使用 navigateTo 跳转会让跳转的页面成为当前引导页的子页面, 是不合适的
+    // 应该用 redirectTo
+    wx.redirectTo({
+      url: '../index/index',
+    })
   }
 })
