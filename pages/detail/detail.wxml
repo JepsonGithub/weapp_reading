@@ -1,7 +1,8 @@
 <view class="container">
   <!-- 顶部展示页 -->
   <view class='topheader'>
-    <image class='imgshow' src='{{ info.imgSrc }}'></image>
+    <image wx:if="{{ !isMusicPlay }}" class='imgshow' src='{{ info.imgSrc }}'></image>
+    <image wx:else class='imgshow' src='{{ info.music.coverImg }}'></image>
 
     <image wx:if="{{ !isMusicPlay }}" class='music-icon' src='/images/music/music-start.png' catchtap="toggleMusic"></image>
     <image wx:else class='music-icon' src='/images/music/music-stop.png' catchtap="toggleMusic" ></image>

@@ -2,7 +2,6 @@
 const INFO = require("../../data/post_data")
 
 
-
 Page({
   
   data: {

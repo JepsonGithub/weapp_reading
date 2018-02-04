@@ -31,6 +31,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    doubanBase: "http://t.yushu.im",
+    g_isPlayingMusic: false
   }
 })

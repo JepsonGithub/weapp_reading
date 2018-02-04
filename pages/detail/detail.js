@@ -1,4 +1,5 @@
 const INFO = require("../../data/post_data")
+const app = getApp()
 
 // pages/detail/detail.js
 Page({
@@ -37,29 +38,57 @@ Page({
   // 切换音乐播放停止
   toggleMusic() {
     let isMusicPlay = this.data.isMusicPlay
-    if (isMusicPlay ) {
-      // 说明正在播放要暂停
-      wx.pauseBackgroundAudio()
-    } else {
-      let musicObj = this.data.info.music
-      // 音乐暂停着, 需要播放
-      wx.playBackgroundAudio({
-        title: musicObj.title,
-        coverImgUrl: musicObj.coverImg,
-        dataUrl: musicObj.url
-      })
-    }
-
-    this.setData( { isMusicPlay: !isMusicPlay } )
+    isMusicPlay ? this.closeMusic() : this.openMusic()
   },
 
+  // 播放音乐
+  openMusic() {
+    let musicObj = this.data.info.music
+    // 音乐暂停着, 需要播放
+    wx.playBackgroundAudio({
+      title: musicObj.title,
+      coverImgUrl: musicObj.coverImg,
+      dataUrl: musicObj.url
+    })
+
+    app.globalData.g_isPlayingMusic = true
+
+    this.setData({ isMusicPlay: true })
+
+  },
+
+  // 关闭音乐
+  closeMusic() {
+    // 说明正在播放要暂停
+    wx.pauseBackgroundAudio()
+    // 将全局的状态置为 false
+    app.globalData.g_isPlayingMusic = false
+
+    this.setData({ isMusicPlay: false })
+  },
 
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 说明音乐播放着呢
+    this.setData({
+      isMusicPlay: app.globalData.g_isPlayingMusic ? true : false
+    })
+    // 根据 postId 渲染页面
     this.setData({ info: INFO.postList[options.postId]} )
+
+
+    // 监听音乐变化
+    wx.onBackgroundAudioPlay(()=>{
+      this.openMusic()
+    })
+
+
+    wx.onBackgroundAudioPause(()=>{
+      this.closeMusic()
+    })
   },
 
   /**
